@@ -1,0 +1,107 @@
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Dra saker</title>
+    <style>
+      html, body
+      {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+      }
+
+      html, body, div
+      {
+        margin: 0;
+        padding: 0;
+	  }
+	
+      .svar
+      {
+	    position: absolute;
+		top: 10%;
+	    width: 176px;
+		height: 151px;
+		outline: 2px dotted black;
+	  }	
+      
+      #svar1
+      {
+		left: 15%;
+	  }	
+
+      #svar2
+      {
+		left: 35%;
+	  }	  
+	  
+	  #svar3
+      {
+		left: 55%;
+	  }	  
+
+      #svar4
+      {
+		left: 75%;
+	  }	 
+  
+      img
+      {
+	    position: absolute;
+		top: 55%;
+	  }	  
+	  
+	  #bild1
+	  {
+	    left: 15%;
+	  }
+	  
+	  #bild2
+	  {
+	    left: 35%;
+	  }
+	  	  
+	  #bild3
+	  {
+	    left: 55%;
+	  }
+	  	  
+	  #bild4
+	  {
+	    left: 75%;
+	  }
+	  
+	  
+    </style>
+  </head>
+  <body>
+    <div id="svar1" class="svar"></div>
+	<div id="svar2" class="svar"></div>
+	<div id="svar3" class="svar"></div>
+	<div id="svar4" class="svar"></div>
+
+    <img id="bild1" src="http://placekitten.com/175/150" />
+	<img id="bild2" src="http://placekitten.com/175/150" />
+	<img id="bild3" src="http://placekitten.com/175/150" />
+	<img id="bild4" src="http://placekitten.com/175/150" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
+    <script>
+	$(function() {
+    $( "img" ).draggable({ snap: ".svar", snapMode: "inner" });
+    $( "img" ).droppable({
+      drop: function( event, ui )
+	  {
+	  }
+    });
+  });
+
+
+
+    </script>
+  </body>
+</html>
