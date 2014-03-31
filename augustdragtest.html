@@ -73,6 +73,15 @@
 	    left: 75%;
 	  }
 	  
+	  input
+	  {
+	    position: absolute;
+		bottom: 10%;
+		right: 15%;
+		width: 75px;
+		height: 50px;
+	  }
+	  
 	  
     </style>
   </head>
@@ -86,11 +95,15 @@
 	<img id="bild2" src="http://placekitten.com/175/150" />
 	<img id="bild3" src="http://placekitten.com/175/150" />
 	<img id="bild4" src="http://placekitten.com/175/150" />
+	
+	<input type="submit" value="Rätta">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
     <script src="jquery.ui.touch-punch.min.js"></script>
     <script>
+	var svar = { "svar1":"", "svar2":"", "svar3":"", "svar4":""}
+	var facit = {"svar1":"bild1", "svar2":"bild2", "svar3":"bild3", "svar4":"bild4"}
 	$(function() {
     $( "img" ).draggable({ snap: ".svar", snapMode: "inner" });
     $( "img" ).droppable({
