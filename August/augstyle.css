@@ -11,51 +11,40 @@ html, body, div
   padding: 0;
 }
 
-#bilder
+#top
 {
   position: absolute;
-  top: 50%;
+  top: 10%;
 }
 	
 .svar
 {
-  position: absolute;
-  top: 10%;
+  float: left;
+  margin-left: 80px;
   width: 175px;
   height: 150px;
   outline: 2px dashed black;
 }	
       
-#svar1
+#bilder
 {
-  left: 4%;
-}	
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
 
-#svar2
+img
 {
-left: 24%;
-}	  
-	  
-#svar3
-{
-  left: 44%;
-}	  
-
-#svar4
-{
-  left: 64%;
-}	 
-	  
-#svar5
-{
-  left: 84%;
+  width: 175px;
+  height: 150px;
 }
 
 input
 {
+  float: right;
   position: absolute;
   bottom: 10%;
-  right: 15%;
+  right: 10%;
   width: 75px;
   height: 50px;
 }
