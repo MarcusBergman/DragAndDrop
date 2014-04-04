@@ -6,9 +6,7 @@
   </head>
   <body>
    
-    <div id="top">
-	
-	</div>
+    <div id="top"></div>
 
     <div id="bilder"></div>
 	
@@ -17,7 +15,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
     <script>
-	var facit = {"svar1":"bild1", "svar2":"bild2", "svar3":"bild3", "svar4":"bild4"};
 	var svar = {"svar1":"","svar2":"","svar3":"","svar4":"","svar5":""};
 	var bilder = [{file: "1.png", id: "bild1"},
 	              {file: "2.png", id: "bild2"},
@@ -50,23 +47,37 @@
   }
   
   if (bilder.length == 5)
-    $(".svar, img").css("margin-left","6%");
+    $(".svar").css("margin-left","6%");
   else if (bilder.length == 4)	
-	$(".svar, img").css("margin-left","10%");
+	$(".svar").css("margin-left","10%");
   else if (bilder.length == 3)	
-	$(".svar, img").css("margin-left","15%");
+	$(".svar").css("margin-left","15%");
   else if (bilder.length == 2)	
-	$(".svar, img").css("margin-left","24%");	
+	$(".svar").css("margin-left","24%");	
+	
+	var answers = {};
+	var facit = {svar0:"bild1", svar1:"bild2", svar2:"bild3", svar3:"bild4", svar4: "bild5"};
 	
   $(function() {
     $( "img" ).draggable({ snap: ".svar", snapMode: "inner" });
     $( ".svar" ).droppable({
       drop: function( event, ui )
 	  {
-	    alert (this.id + ui.draggable.attr("id"));
+	    answers [this.id]=ui.draggable.attr("id");
 	  }
     });
     });
+	
+  $("input").click(function(){	
+  	for (var i=0; i<bilder.length; i++){
+	
+	  if (answers == facit)
+	    alert ("rätt");
+	  else
+        alert ("fel");	  
+	
+	}
+  })
     </script>
   </body>
 </html>
