@@ -6,7 +6,9 @@
   </head>
   <body>
    
-    <div id="top"></div>
+    <div id="top">
+	
+	</div>
 
     <div id="bilder"></div>
 	
@@ -17,7 +19,11 @@
     <script>
 	var facit = {"svar1":"bild1", "svar2":"bild2", "svar3":"bild3", "svar4":"bild4"};
 	var svar = {"svar1":"","svar2":"","svar3":"","svar4":"","svar5":""};
-	var bilder = ["1.png","2.png","3.png","4.png","5.png"];
+	var bilder = [{file: "1.png", id: "bild1"},
+	              {file: "2.png", id: "bild2"},
+				  {file: "3.png", id: "bild3"},
+				  {file: "4.png", id: "bild4"},
+				  {file: "5.png", id: "bild5"}];
 	
 	for (var i=0; i<bilder.length; i++){
 	  $('#top').append('<div class="svar" id="svar' +i+ '"></div>');
@@ -39,19 +45,28 @@
 
   for (var i=0; i<blandadeBilder.length; i++){
 	
-      $('#bilder').append('<img src="' +bilder[i]+ '" id="bild'+i+'" />');
+      $('#bilder').append('<img src="' +bilder[i].file+ '" id="' +bilder[i].id+'" />');
 
   }
+  
+  if (bilder.length == 5)
+    $(".svar, img").css("margin-left","6%");
+  else if (bilder.length == 4)	
+	$(".svar, img").css("margin-left","10%");
+  else if (bilder.length == 3)	
+	$(".svar, img").css("margin-left","15%");
+  else if (bilder.length == 2)	
+	$(".svar, img").css("margin-left","24%");	
 	
-	$(function() {
+  $(function() {
     $( "img" ).draggable({ snap: ".svar", snapMode: "inner" });
-    $( "img" ).droppable({
+    $( ".svar" ).droppable({
       drop: function( event, ui )
 	  {
+	    alert (this.id + ui.draggable.attr("id"));
 	  }
     });
-  });
-
+    });
     </script>
   </body>
 </html>

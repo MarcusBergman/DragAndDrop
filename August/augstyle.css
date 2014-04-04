@@ -15,12 +15,12 @@ html, body, div
 {
   position: absolute;
   top: 10%;
+  width: 100%;
 }
 	
 .svar
 {
   float: left;
-  margin-left: 80px;
   width: 175px;
   height: 150px;
   outline: 2px dashed black;
@@ -30,7 +30,7 @@ html, body, div
 {
   position: absolute;
   top: 50%;
-  left: 5%;
+  width: 100%;
 }
 
 img
